@@ -30,7 +30,7 @@ class ChatInputPresenterTests: XCTestCase {
     private var presenter: BasicChatInputBarPresenter!
     override func setUp() {
         super.setUp()
-        self.bar = ChatInputBar.loadNib()
+        self.bar = ChatInputBar.loadChatNib()
         self.presenter = BasicChatInputBarPresenter(chatInputBar: self.bar, chatInputItems: [], chatInputBarAppearance: ChatInputBarAppearance())
     }
 

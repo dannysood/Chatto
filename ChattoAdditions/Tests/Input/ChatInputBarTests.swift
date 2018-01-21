@@ -31,7 +31,7 @@ class ChatInputBarTests: XCTestCase {
     private var delegateStrong: FakeChatInputBarDelegate!
     override func setUp() {
         super.setUp()
-        self.bar = ChatInputBar.loadNib()
+        self.bar = ChatInputBar.loadChatNib()
     }
 
     private func setupPresenter() {
