@@ -30,7 +30,7 @@ public protocol ChatInputBarDelegate: class {
   func inputBarDidEndEditing(_ inputBar: ChatInputBar)
   func inputBarDidChangeText(_ inputBar: ChatInputBar)
   func inputBarSendButtonPressed(_ inputBar: ChatInputBar)
-  //blabla
+  
   func inputBarSendLaterButtonPressed(_ inputBar: ChatInputBar)
   func inputBar(_ inputBar: ChatInputBar, shouldFocusOnItem item: ChatInputItemProtocol) -> Bool
   func inputBar(_ inputBar: ChatInputBar, didReceiveFocusOnItem item: ChatInputItemProtocol)
@@ -49,7 +49,7 @@ open class ChatInputBar: ReusableXibView {
   @IBOutlet weak var scrollView: HorizontalStackScrollView!
   @IBOutlet weak var textView: ExpandableTextView!
   @IBOutlet weak var sendButton: UIButton!
-  //blabla
+  
   @IBOutlet weak var sendLaterButton: UIButton!
   @IBOutlet weak var topBorderHeightConstraint: NSLayoutConstraint!
   
@@ -80,7 +80,7 @@ open class ChatInputBar: ReusableXibView {
     self.textView.delegate = self
     self.scrollView.scrollsToTop = false
     self.sendButton.isEnabled = false
-    //blabla
+    
     self.sendLaterButton.isEnabled = false
   }
   
@@ -92,7 +92,7 @@ open class ChatInputBar: ReusableXibView {
       NSLayoutConstraint.deactivate(self.constraintsForVisibleTextView)
       NSLayoutConstraint.activate(self.constraintsForHiddenTextView)
     }
-    //blabla
+    
     if self.showsSendButton {
       NSLayoutConstraint.deactivate(self.constraintsForHiddenSendButton)
       NSLayoutConstraint.activate(self.constraintsForVisibleSendButton)
@@ -168,7 +168,7 @@ open class ChatInputBar: ReusableXibView {
     set {
       self.textView.text = newValue
       self.updateSendButton()
-      //blabla
+      
       self.updateSendLaterButton()
     }
   }
@@ -176,19 +176,19 @@ open class ChatInputBar: ReusableXibView {
   fileprivate func updateSendButton() {
     self.sendButton.isEnabled = self.shouldEnableSendButton(self)
   }
-  //blabla
+  
   fileprivate func updateSendLaterButton() {
     self.sendLaterButton.isEnabled = self.shouldEnableSendButton(self)
   }
   
-  //blabla
+  
   
   @IBAction func buttonTapped(_ sender: AnyObject) {
     self.presenter?.onSendButtonPressed()
     self.delegate?.inputBarSendButtonPressed(self)
   }
   
-  //blabla
+  
   @IBAction func sendLaterButtonTapped(_ sender: AnyObject) {
     self.presenter?.onSendLaterButtonPressed()
     self.delegate?.inputBarSendLaterButtonPressed(self)
@@ -234,7 +234,7 @@ extension ChatInputBar {
       self.sendButton.setTitleColor(color, for: state.controlState)
     }
     self.sendButton.titleLabel?.font = appearance.sendButtonAppearance.font
-    //blabla
+    
     self.sendLaterButton.contentEdgeInsets = appearance.sendButtonAppearance.insets
     self.sendLaterButton.setTitle(appearance.sendLaterButtonAppearance.title, for: .normal)
     appearance.sendButtonAppearance.titleColors.forEach { (state, color) in
@@ -283,7 +283,7 @@ extension ChatInputBar: UITextViewDelegate {
   
   public func textViewDidChange(_ textView: UITextView) {
     self.updateSendButton()
-    //blabla
+    
     self.updateSendLaterButton()
     self.delegate?.inputBarDidChangeText(self)
   }

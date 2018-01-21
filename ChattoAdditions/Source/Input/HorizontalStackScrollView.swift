@@ -55,7 +55,7 @@ open class HorizontalStackScrollView: UIScrollView {
     }
     self.arrangedViewContraints.removeAll()
   }
-  //blabla
+  
   // This logic is broken but it works for one item
   // todo make it generic before adding more actions than one
   private func addConstraintsForArrengedViews() {

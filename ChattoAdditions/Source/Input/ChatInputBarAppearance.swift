@@ -53,7 +53,7 @@ public struct ChatInputBarAppearance {
   }
   
   public var sendButtonAppearance = SendButtonAppearance()
-  //blabla
+  
   public var sendLaterButtonAppearance = SendButtonAppearance()
   public var tabBarAppearance = TabBarAppearance()
   public var textInputAppearance = TextInputAppearance()

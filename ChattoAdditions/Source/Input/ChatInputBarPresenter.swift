@@ -29,7 +29,7 @@ protocol ChatInputBarPresenter: class {
   func onDidBeginEditing()
   func onDidEndEditing()
   func onSendButtonPressed()
-  //blabla
+  
   func onSendLaterButtonPressed()
   func onDidReceiveFocusOnItem(_ item: ChatInputItemProtocol)
 }
@@ -154,7 +154,7 @@ extension BasicChatInputBarPresenter {
     }
     self.chatInputBar.inputText = ""
   }
-  //blabla
+  
   func onSendLaterButtonPressed() {
     if let focusedItem = self.focusedItem {
       focusedItem.handleInput(self.chatInputBar.inputText as AnyObject)
